@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+
+{% block title %}
+     - Atualizando Membro
+{% endblock %}
+
+
+{% block content %}
+    <div class='card mt-2'>
+        <div class='card-header'>
+            Atualizando Membro
+        </div>
+        <div class="card-body">
+            <form action="updaterecord/{{ member.id }}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="first-name">First Name:</label>
+                  <input type="text" class="form-control" id="first-name" name="first" value="{{ member.firstname }}">
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name:</label>
+                  <input type="text" class="form-control" id="last-name" name="last" value="{{ member.lastname }}">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Telefone:</label>
+                  <input type="text" class="form-control" id="phone" name="phone" value="{{ member.phone }}">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+              </form>
+              
+            <br><p><a href="/members">Voltar</a></p>
+        </div>
+    </div>   
+{% endblock %}  
