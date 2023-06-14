@@ -7,9 +7,9 @@
 
 {% block content %}
     <div class='card mt-2'>
-        <div class='card-header'>
-            Novo Membro
-        </div>
+      <div class="card-header text-center"> 
+        <h3> Listagem de Membros do My Tennis Club </h3>
+      </div>
         <div class="card-body">
             <form action="addrecord/" method="post">
                 {% csrf_token %}
@@ -25,10 +25,10 @@
                   <label for="phone">Telefone:</label>
                   <input type="text" class="form-control" id="phone" name="phone">
                 </div>
-                <br><button type="submit" class="btn btn-primary">Submit</button>
+                <br><button type="submit" class="btn btn-primary">Adicionar</button>
               </form>
               
-            <br><p><a href="/members">Voltar</a></p>
+            <br><p><a class="btn btn-secondary" href="/members">Voltar</a></p>
         </div>
     </div>   
 {% endblock %}  

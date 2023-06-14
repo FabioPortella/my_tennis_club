@@ -1,30 +1,38 @@
 {% extends "master.html" %}
 
 {% block title %}
-  My Tennis Club - List of all members
+  My Tennis Club - Lista de todos os membros
 {% endblock %}
 
-
 {% block content %}
-
 <div class="card mt-2">
 
-  <div class="card-header"> 
-    Membros
+  <div class="card-header text-center"> 
+    <h3> Listagem de Membros do My Tennis Club </h3>
   </div>
-
   <div class="card-body">
-    <ul class="list-group">
-    {% for x in mymembers %}
-      <li class="list-group-item">
-        <a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a>
-        <a href="delete/{{x.id }}" class="ms-2 btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
-        <a href="update/{{x.id }}" class="ms-2 btn btn-info"><i class="fa-solid fa-pen"></i></a>
-      </li>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">sobrenome</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for x in mymembers %}
+        <tr>
+          <th><a href="details/{{ x.id }}">{{ x.firstname }} </a></th>
+          <td>{{ x.lastname }}</td>
+          <td>
+            <a href="delete/{{x.id }}" class="ms-2 btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+            <a href="update/{{x.id }}" class="ms-2 btn btn-info"><i class="fa-solid fa-pen"></i></a>
+          </td>
+        </tr>
       {% endfor %}
-    </ul>
-
-    <br><a href="add/" class="btn btn-primary">Adiciona novo membro</a>
+      </tbody>
+    </table>
+    <a href="add/" class="btn btn-primary">Adiciona novo membro</a>
   </div>
   
 </div>

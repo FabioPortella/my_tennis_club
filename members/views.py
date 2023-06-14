@@ -1,9 +1,9 @@
+from datetime import datetime
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import Member
-from .forms import MembersForm
 
 
 def members(request):
@@ -34,8 +34,9 @@ def addrecord(request):
     first = request.POST['first']
     last = request.POST['last']
     phone = request.POST['phone']
+    joined_date = datetime.now()
 
-    member = Member(firstname=first, lastname=last, phone=phone)
+    member = Member(firstname=first, lastname=last, phone=phone, joined_date=joined_date)
     member.save()
     return HttpResponseRedirect(reverse('members'))
 
