@@ -15,18 +15,18 @@
       <thead class="table-dark">
         <tr>
           <th scope="col">Nome</th>
-          <th scope="col">sobrenome</th>
+          <th scope="col">Sobrenome</th>
           <th scope="col">Ações</th>
         </tr>
       </thead>
       <tbody>
         {% for x in mymembers %}
         <tr>
-          <th><a href="details/{{ x.id }}">{{ x.firstname }} </a></th>
+          <th><a href="details/{{ x.id }}" style="text-decoration: none; color: inherit;">{{ x.firstname }} </a></th>
           <td>{{ x.lastname }}</td>
           <td>
-            <a href="delete/{{x.id }}" class="ms-2 btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
-            <a href="update/{{x.id }}" class="ms-2 btn btn-info"><i class="fa-solid fa-pen"></i></a>
+            <a href="delete/{{x.id }}" class="ms-2 btn"><i class="fa-solid fa-trash-can"></i></a>
+            <a href="update/{{x.id }}" class="ms-2 btn"><i class="fa-solid fa-pen"></i></a>
           </td>
         </tr>
       {% endfor %}
