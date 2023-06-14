@@ -13,9 +13,9 @@
   </div>
 
   <div class= "card-body">
-    <a href="tel:+55{}".format(pessoa.phone)>Telefone: {{ mymember.phone }}</a>
+    <p>Telefone: {{ mymember.phone }}</p>
     <p>Membro desde: {{ mymember.joined_date|date:'d / M / Y' }}</p>
-
+    <p>Possui o planto: {{ mymember.plan}}</p>
   </div>
 </div>
 

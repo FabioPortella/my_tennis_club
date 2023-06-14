@@ -25,6 +25,14 @@
                   <label for="phone">Telefone:</label>
                   <input type="text" class="form-control" id="phone" name="phone" value="{{ member.phone }}">
                 </div>
+                <div class="form-group">
+                  <label>Plano:</label>
+                  <select class="form-select" name="plan">
+                    {% for x in plans %}
+                    <option {% if x.id == member.plan.id %} selected {% endif %} value="{{ x.id}}"> {{ x.title }}</options>
+                    {% endfor %}
+                  </select>
+                </div>
                 <br>
                 <button type="submit" class="btn btn-success">Atualizar</button>
               </form>              
